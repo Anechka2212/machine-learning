@@ -1,15 +1,9 @@
-
-# coding: utf-8
-
-# In[14]:
-
-
 from functools import reduce
 import requests
 import matplotlib.pyplot as plt
 from pylab import *
 from matplotlib import rcParams
-get_ipython().run_line_magic('matplotlib', 'inline')
+%matplotlib inline 
 
 #считывание 1000 вакансий с hh.ru
 
@@ -114,15 +108,16 @@ plt.show()
 
 #график медиан
 
-bins = range(50000, 250000, 50000)
+#bins = range(50000, 350000, 25000)
 
 med = [med_sdat, med_spro, med_sdev, med_soth]
+print(med)
 
 plt.title('med salary schedule')
 plt.ylabel("value")
 plt.xlabel("salary")
 
-hist, bins = np.histogram(med, bins = bins)
+hist, bins = np.histogram(med)
 print(hist, bins)
 
 plt.hist(med, bins)
@@ -130,18 +125,18 @@ plt.show()
 
 #график диапазона
 
-bins = range(0, 100, 10)
+#bins = range(0, 50, 5)
 
 ran = [s1, s2, s3, s4, s5, s6]
+print(ran)
 
 plt.title('salary schedule')
 plt.ylabel("value")
 plt.xlabel("people")
 
-hist, bins = np.histogram(ran, bins = bins)
+hist, bins = np.histogram(ran)
 print(hist, bins)
 
 plt.hist(ran, bins)
 plt.show()
-
 
